@@ -1,5 +1,10 @@
 package ru.nedovesov.lesson_1;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ArrayParameters<T> {
     private T[] arr;
 
@@ -21,6 +26,15 @@ public class ArrayParameters<T> {
         }
     }
 
+//Метод, преобразующий массив в ArrayList
+    public List<T> arrayToArrayList (@NotNull T[] array){
+        List<T> arrayList = new ArrayList<T>();
+        for (T itemArray:array) {
+            arrayList.add(itemArray);
+        }
+        return arrayList;
+    }
+    
     private boolean checkIndex(int i, int j) {
         return i >= 0 && i < arr.length && j >= 0 && j < arr.length && i != j;
     }
